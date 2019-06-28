@@ -23,8 +23,59 @@ cd neos-ui-testing-distribution
 composer install --prefer-source
 ```
 
-3. Start the neos instance
+3. Create Database and configure Settings.yaml
 
 ```
-./flow server:run
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        driver: pdo_mysql
+        dbname: neosuitesting
+        user: user
+        host: 127.0.0.1
+        password: password
 ```
+
+4. Run the following commands
+
+```
+./flow flow:cache:flush
+./flow flow:cache:warmup
+./flow doctrine:migrate
+./flow user:create --username=admin --password=password --first-name=John --last-name=Doe --roles=Administrator
+```
+
+5. Checkout Neos-Ui branch
+
+We want so test a particular branch or a PR. So we need to checkout
+the code we want to test. In the example we just use the 2.x branch.
+The 2.x branch is neos 3.3 compatible and the lowest maintained branch.
+
+```
+cd Packages/Application/Neos.Neos.Ui
+git checkout 2.x && git pull
+make clean && make setup
+./flow user:create --username=admin --password=password --first-name=John --last-name=Doe --roles=Administrator
+```
+
+6. Run your first acceptance tests
+
+After all that your instance is able to run the fixures of the neos-ui.
+This distribution has only a testing purpose!
+
+```
+make test-e2e
+```
+
+[Running acceptance test for neos-ui](https://postimg.cc/MXjjcG08)
+
+### Available commands for testing
+| Command         | Description                    |
+| --------------- | ------------------------------ |
+| `make lint`  | Executes `make lint-js` and `make lint-editorconfig`. |
+| `make lint-js`  | Runs test in all subpackages via lerna. |
+| `make lint-editorconfig`  | Tests if all files respect the `.editorconfig`. |
+| `make test`  | Executes the test on all source files. |
+| `make test-e2e`  | Executes integration tests. |
+| `make test-e2e-saucelabs`  | Executes integration tests against saucelabs. |
