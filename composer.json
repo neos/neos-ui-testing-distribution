@@ -1,0 +1,37 @@
+{
+    "name": "neos/neos-ui-testing-distribution",
+    "description": "Neos Ui Testing Distribution",
+    "license": "GPL-3.0-or-later",
+    "support": {
+        "email": "hello@neos.io",
+        "slack": "http://slack.neos.io/",
+        "forum": "https://discuss.neos.io/",
+        "wiki": "https://discuss.neos.io/c/the-neos-project/project-documentation",
+        "issues": "https://github.com/neos/neos-ui-testing-distribution/issues",
+        "docs": "http://neos.readthedocs.io/",
+        "source": "https://github.com/neos/neos-ui-testing-distribution"
+    },
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "require": {
+        "neos/neos": "^3.3",
+        "neos/neos-ui": "^2",
+        "neos/fusion-afx": "^1.0",
+        "neos/test-site": "@dev",
+        "neos/test-nodetypes": "@dev"
+    },
+    "repositories": {
+        "distribution": {
+            "type": "path",
+            "url": "./DistributionPackages/*"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}
