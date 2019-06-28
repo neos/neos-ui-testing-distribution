@@ -68,7 +68,7 @@ This distribution has only a testing purpose!
 make test-e2e
 ```
 
-[Running acceptance test for neos-ui](https://postimg.cc/MXjjcG08)
+[![Running acceptance test for neos-ui](https://i.postimg.cc/J7p32DGt/testing-distribution.png)](https://postimg.cc/MXjjcG08)
 
 ### Available commands for testing
 | Command         | Description                    |
