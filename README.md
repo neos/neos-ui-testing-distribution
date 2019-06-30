@@ -4,7 +4,7 @@ This repository provides a neos-cms distribution for testing the neos-ui.
 The neos-ui is using [testcafe](https://github.com/DevExpress/testcafe) for acceptance testing and needs fixure data
 for the test cases.
 
-The distribution is used for the circle ci pipelin and you can also use it for your
+The distribution is used for the CircleCI pipeline and you can also use it for your
 local environment. The distribution is currently based on neos 3.3 because the lowest maintained
 branch for the Ui is 2.x and is for neos 3.3.
 
@@ -61,7 +61,7 @@ make clean && make setup
 
 6. Run your first acceptance tests
 
-After all that your instance is able to run the fixures of the neos-ui.
+After all that your instance is able to run the fixtures of the neos-ui.
 This distribution has only a testing purpose!
 
 ```
