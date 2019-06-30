@@ -70,7 +70,20 @@ make test-e2e
 
 [![Running acceptance test for neos-ui](https://i.postimg.cc/J7p32DGt/testing-distribution.png)](https://postimg.cc/MXjjcG08)
 
-### Available commands for testing
+
+## Using saucelabs locally
+
+We are providing command `make test-e2e-saucelabs`, but this only works when you own a saucelabs account.
+You need to provide the username and authentication key to use saucelabs.
+
+```
+export SAUCE_USERNAME=your_username
+export SAUCE_ACCESS_KEY=fffff-ssss-4aa6-a4f3-xxxxxeb2f59
+make test-e2e-saucelabs
+```
+
+
+## Available commands for testing
 | Command         | Description                    |
 | --------------- | ------------------------------ |
 | `make lint`  | Executes `make lint-js` and `make lint-editorconfig`. |
