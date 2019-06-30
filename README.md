@@ -27,14 +27,14 @@ composer install --prefer-source
 
 ```
 Neos:
-  Flow:
-    persistence:
-      backendOptions:
-        driver: pdo_mysql
-        dbname: neosuitesting
-        user: user
-        host: 127.0.0.1
-        password: password
+    Flow:
+        persistence:
+          backendOptions:
+          driver: pdo_mysql
+          dbname: neosuitesting
+          user: user
+          host: 127.0.0.1
+          password: password
 ```
 
 4. Run the following commands
